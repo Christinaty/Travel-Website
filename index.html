@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Urbanist:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+  body {
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+  scroll-behavior: smooth;
+}
+  .logo {
+font-size: 3rem;
+font-weight:400;
+size:28px;
+line-height:100%;
+letter-spacing: 10%;
+}
+  h1, h2, h3 {
+    font-family: 'Gilda Display', serif;
+    margin: 0;
+  }
+  h1{font-size: 100px;
+font-weight:400;
+text-align:center;
+line-height: 170px;
+}
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+  }
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: aquamarine;
+  }
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .hero {
+    position: relative;
+    height: 80vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: auto;
+  }
+  .layer.blurry {
+  width: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: brightness(1.1);
+  background-color:#44D5CD;
+  z-index: 0;
+  }
+  .ellipse {
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .couple {
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 2;
+  }
+  .text-overlay {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    z-index: 3;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  }
+    .text-overlay span.travel {
+    color: #25A59E;
+    }
+    .text-overlay span.rest {
+     color:#262626;
+    }
+  .destinations, .why-us {
+    padding: 40px 20px;
+  }
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  .destination-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding-bottom: 10px;
+  }
+  .destination-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+  .destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+  .text-caption {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  .location {
+    font-size: 10px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 10px;
+    margin-top: 0.2rem;
+  }
+  .location img {
+    width: 10px;
+    height: 10px;
+  }
+  .card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 40px 20px;
+}
+.card {
+  width: 230px; /* slightly narrower */
+  height: auto;
+  padding: 20px;
+  border-top: 5px solid green;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  gap: 8px;
+  margin-top: 20px;
+}
+.details-text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  color: #25A59E;
+}
+.card-2 .details-text {
+  color: #ffffff;
+}
+    .card-1 {
+      background-color:   #FFFFFF; /* white */    
+    }
+    .card-2 {
+      background-color: #25A59E; /* teal */
+      
+    }
+    .card-3 { 
+      background-color:#FFFFFF; /* white */
+      
+    }
+    .card p:nth-of-type(1) {
+      font-family: 'Gilda Display', serif;
+      margin-bottom: 10px;
+    }
+    .card p:nth-of-type(2) {
+      font-family: 'Urbanist', sans-serif;
+      margin-bottom: 10px;
+    }
+    .card p:nth-of-type(3) {
+      font-family: 'Gilda Display', serif;
+    }
+    .arrow-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: #25A59E;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .memorable-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.memorable-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.memorable-text h2 {
+  font-size: 2.5rem;
+  font-family: 'Gilda Display', serif;
+}
+
+.memorable-text p {
+  font-size: 1rem;
+  font-family: 'Urbanist', sans-serif;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.memorable-text .travel {
+  color: #25A59E;
+  font-weight: bold;
+}
+
+.memorable-image {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.shape-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.couple-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  height: auto;
+}
+.travel {
+  color: #25A59E;
+}
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px; /* adjust as needed */
+  height: 80px; /* adjust as needed */
+}
+
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.play {
+  width: 30px; /* smaller than the circle */
+  height: 30px;
+  z-index: 1;
+}
+
+.text-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+  .footer {
+    padding: 20px 0;
+  }
+  .icon-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.path {
+  display: flex;
+  gap: 100px; /* double spacing between icons */
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.menu {
+  display: flex;
+  gap: 80px; /* spacing between menu links */
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Add extra space between the path icons and the menu */
+.icon-bar {
+  column-gap: 100px; /* big space between icons and menu */
+}
+.offer {
+  padding: 40px 20px;
+}
+
+.offer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.offer-text {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.offer-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button-icon {
+  height: 40px;
+  width: auto;
+}
+
+.divider {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.divider-img {
+  width: 100%;
+  max-width: 1440px;
+  background-color: #F2F2F2;
+  size: 10px;
+}
+.footer-info h2 {
+  font-size: 2rem;
+  color: #25A59E;
+  margin-bottom: 10px;
+}
+
+.footer-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+</style>
+<body>
+  <nav class="navbar">
+    <div class="logo">Travel</div>
+    <img src="images/menu.png" alt="Menu" class="menu-icon" />
+  </nav>
+  <header class="hero">
+    <img src="images/Blurry.png" class="layer" alt="Blurry Background" />
+    <img src="images/Ellipse 168.png" class="layer ellipse" alt="Ellipse" />
+    <img src="images/Image (1).png" class="layer couple" alt="Couple" />
+    <div class="text-overlay">
+        <span class="travel">Travel</span> <span class="rest">around <br/> the world</span>
+    </div>
+  </header>
+
+  <section class="destinations">
+    <h2>Find your best destination</h2>
+    <p>We have more than 1000+ destinations you can choose.</p>
+    <div class="destination-grid">
+      <div class="destination-card">
+        <img src="images/Image.png" alt="Mirror Lake" />
+        <div class="text-caption">Mirror Lake</div>
+        <div class="location"><img src="images/Location.svg" />Jawa Tengah, Indonesia</div>
+      </div>
+      <div class="destination-card">
+        <img src="images/Hot air balloon.png" alt="Hot Air Balloon" />
+        <div class="text-caption">Hot Air Balloon</div>
+        <div class="location"><img src="images/Location.svg" />Cappadocia, Turkey</div>
+      </div>
+      <div class="destination-card">
+        <img src="images/Lake.png" alt="Oeschinen Lake" />
+        <div class="text-caption">Oeschinen Lake</div>
+        <div class="location"><img src="images/Location.svg" />Pasuruan, Indonesia</div>
+      </div>
+      <div class="destination-card">
+        <img src="images/Falls.png" alt="Rhine Falls" />
+        <div class="text-caption">Rhine Falls</div>
+        <div class="location"><img src="images/Location.svg" />Jawa Tengah, Indonesia</div>
+      </div>
+      <div class="destination-card">
+        <img src="images/Slake.png" alt="Sunter Lake" />
+        <div class="text-caption">Sunter Lake</div>
+        <div class="location"><img src="images/Location.svg"/>Jawa Tengah, Indonesia</div>
+      </div>
+      <div class="destination-card">
+        <img src="images/negeri.png" alt="Negeri di atas Awan" />
+        <div class="text-caption">Negeri di atas Awan</div>
+        <div class="location"><img src="images/Location.svg"/>Jawa Tengah, Indonesia</div>
+      </div>
+    </div>
+  </section>
+  <section class="why-us">
+    <h2>Why Choose Us</h2>
+    <p>We have been around for over 10 years. Thousands of our customers recommend us because of our excellent service and global travel support.</p>
+  </section>
+  <section class="card-container">
+    <div class="card card-1">
+      <p>Best Guide, Best Experience.</p>
+      <p>Your trip will be very memorable with the best guide.</p>
+      <div class="card-footer">
+        <span class="details-text">More details</span>
+      <button class="arrow-btn">→</button>
+    </div>
+    </div>
+    <div class="card card-2">
+      <p>Always have Special Tickets.</p>
+      <p>We always offer special tickets and we give them to all customers.</p>
+      <div class="card-footer">
+        <span class="details-text">More details</span>
+      <button class="arrow-btn">→</button>
+    </div>
+    </div>
+    <div class="card card-3">
+      <p>Always Ready Support 24/7.</p>
+      <p>We always make time to ask questions anytime and anywhere.</p>
+      <div class="card-footer">
+        <span class="details-text">More details</span>
+      <button class="arrow-btn">→</button>
+      </div>
+    </div>
+  </section>
+  <section class="memorable">
+    <div class="memorable-container">
+      <div class="memorable-text">
+        <h2><span class="travel">Travel,</span> make the <br> trip memorable</h2>
+        <p>
+          Thousands of our customers always recommend us because of the <br/>
+          service we provide. Your trip will be very memorable with the best <br/>
+          travel agent, <span class="travel">Travel!</span>
+        </p>
+      </div>
+      
+      <div class="memorable-image">
+        <div class="image-wrapper">
+          <img src="images/Shape.png" alt="shape-bg" class="shape-bg" />
+          <img src="images/Couple2.png" alt="couple-img" class="couple-img" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="documentation">
+    <h2>Watch our entire trip documentation</h2>
+    <div class="video-container">
+      <div class="video-wrapper">
+        <img src="images/video.png" alt="video" class="video" />
+        <div class="play-overlay">
+          <img src="images/Circle.png" alt="Circle" class="circle" />
+          <img src="images/Play.png" alt="Play" class="play" />
+        </div>
+      </div>
+    </div>
+    <section class="offer">
+      <div class="offer-row">
+        <h2 class="offer-text">Get our best offer now!</h2>
+        <button class="offer-button">
+          <img src="images/CTA Primer.png" alt="Click here" class="button-icon" />
+        </button>
+      </div>
+    
+      <div class="divider">
+        <img src="images/Divider.png" alt="divider" class="divider-img" />
+      </div>
+    
+      <div class="footer-info">
+        <h2>Travel</h2>
+        <p>
+          The best travel agent in the world. <br />
+          Contact us immediately now!
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="icon-bar">
+      <div class="path">
+      <ul>
+        <img src="images/Path.png" alt="instagram" class="icon" />
+        <img src="images/Path (1).png" alt="twitter" class="icon" />
+        <img src="images/Path (2).png" alt="youtube" class="icon" />
+      </ul>
+    </div>
+    <div class="menu">
+    <ul>
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">Guide</a>
+      <a href="#">Contact Us</a>
+    </ul>
+  </div>
+  </div>
+  </footer>
+</body>
